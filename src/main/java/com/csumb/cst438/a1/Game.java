@@ -31,18 +31,7 @@ public class Game {
     public Game() {
         wordlist=null;
         state=1;
-
-	//Makes entries for wordlist from wordlist.txt
-	BufferedReader words = new BufferedReader(new FileReader("McDermott_CST438/src/main/resources/wordlist.txt"));
-	String str;
-	for(int i = 0; i < 100; i++)
-	{
-	    wordlist.add(str);
-	}
-
-        generator = new Random();
-	generator.nextInt(100);
-        word=wordlist[generator];
+        word=randomWord();
         createDisplayWord();
     }
     
