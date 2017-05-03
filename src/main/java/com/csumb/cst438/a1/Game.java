@@ -29,11 +29,21 @@ public class Game {
     private ArrayList<String> wordlist;  // list of words
     
     public Game() {
-        word="computer";
-        createDisplayWord();
-        state=1;
         wordlist=null;
+        state=1;
+
+	//Makes entries for wordlist from wordlist.txt
+	BufferedReader words = new BufferedReader(new FileReader("McDermott_CST438/src/main/resources/wordlist.txt"));
+	String str;
+	for(int i = 0; i < 100; i++)
+	{
+	    wordlist.add(str);
+	}
+
         generator = new Random();
+	generator.nextInt(100);
+        word=wordlist[generator];
+        createDisplayWord();
     }
     
     public int getState(){
