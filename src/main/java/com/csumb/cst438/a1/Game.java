@@ -14,7 +14,7 @@ import java.util.Scanner;
  */
 public class Game {
  
-    private Random generator;  
+    /*private Random generator;  
     private int state;  
 	           //  1 means no incorrect guesses, or start of game
                    //  2 means 1 incorrect guess.
@@ -63,7 +63,7 @@ public class Game {
      *        2 = bad guess.  continue game
      *        3 = bad guess.  Lost game.
      */
-    public int playGame(char guess) {
+    /*public int playGame(char guess) {
             boolean correctGuess = updateDisplayWord(guess);
             if (correctGuess==false) { 
                 state++;
@@ -86,7 +86,7 @@ public class Game {
      * @param guess
      * @return true if at least one match, false if guess is incorrect
      */
-    private boolean updateDisplayWord(char guess){
+    /*private boolean updateDisplayWord(char guess){
         boolean correctGuess = false;
         for (int i=0; i<word.length(); i++) {
             if (word.charAt(i)==guess){
@@ -103,7 +103,7 @@ public class Game {
      * @param word
      * @return 
      */
-    private void createDisplayWord(){
+    /*private void createDisplayWord(){
         displayWord = new StringBuffer("_");
         for (int i=1; i<word.length(); i++) {
             displayWord.append(" _");
@@ -116,7 +116,7 @@ public class Game {
      * 
      * @return a word from the list
      */
-    private String randomWord() {
+    /*private String randomWord() {
 	try {
             if (wordlist == null) {
 		wordlist = new ArrayList<String>();
@@ -135,5 +135,5 @@ public class Game {
             System.exit(0);
             return null; // to keep compiler happy
 	}
-    }
+    }*/
 }
