@@ -65,16 +65,17 @@ public class Game {
      */
     public int playGame(char guess, boolean nonletter) {
             boolean correctGuess = updateDisplayWord(guess);
-            if (correctGuess==false && nonletter == false) { 
-                state++;
+            if (correctGuess==false) { 
+                if (nonletter == false) {
+		    //Recognizes that user entered a valid character
+		    state++;
+		}
                 if (state==7) {
                     // user has lost game
                     return 3;
                 } else {
                     return 2; // bad guess, continue
                 }
-	    } else if (correctGuess==false && nonletter == true) {
-		return 4;
             } else if ( displayWord.indexOf("_") >= 0) {
                return 0; // continue game, with good guess
             } else {
