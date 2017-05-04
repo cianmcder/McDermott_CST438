@@ -69,6 +69,8 @@ public class Game {
                 if (nonletter == false) {
 		    //Recognizes that user entered a valid character
 		    state++;
+		} else {
+		    return 4;
 		}
                 if (state==7) {
                     // user has lost game
