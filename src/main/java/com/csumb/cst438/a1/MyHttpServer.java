@@ -72,16 +72,10 @@ public class MyHttpServer {
                                     // continue with current game
                                     char ch = uri.charAt(uri.length()-1);  // letter that user has guessed
                                     int result = game.playGame(ch);
+				    if(flag == true)
+					result = 4;
                                     switch(result) {
-					case 0: //Improper character(s) entered
-					    response = "<!DOCTYPE html><html><head><title>MyHttpServer</title></head><body><h2>Hangman</h2>"
-                                            + "<img src=\"" + "h" + game.getState() + ".gif" + "\">"
-                                            + "<h2 style=\"font-family:'Lucida Console', monospace\"> " + game.getDisplayWord() + "</h2>"
-                                            + "<form action=\"/\" method=\"get\"> "
-                                            + "Error. Improper character entered. <input type=\"text\" name=\"guess\"><br>"
-                                            + "<input type=\"submit\" value=\"Submit\">" + "</form></body></html>";
-                                            break;
-                                        case 1: // good guess, continue game
+                                        case 0: // good guess, continue game
                                             response = "<!DOCTYPE html><html><head><title>MyHttpServer</title></head><body><h2>Hangman</h2>"
                                             + "<img src=\"" + "h" + game.getState() + ".gif" + "\">"
                                             + "<h2 style=\"font-family:'Lucida Console', monospace\"> " + game.getDisplayWord() + "</h2>"
@@ -89,14 +83,14 @@ public class MyHttpServer {
                                             + "Guess a character <input type=\"text\" name=\"guess\"><br>"
                                             + "<input type=\"submit\" value=\"Submit\">" + "</form></body></html>";
                                             break;
-                                        case 2: // good guess, win game
+                                        case 1: // good guess, win game
                                              response = "<!DOCTYPE html><html><head><title>MyHttpServer</title></head><body><h2>Hangman</h2>"
                                             + "<img src=\"" + "h" + game.getState() + ".gif" + "\">"
                                             + "<h2 style=\"font-family:'Lucida Console', monospace\"> " + "</h2>"
                                             + "<h2>Congratulations you win!</h2>" + "</body></html>";
                                              cookie="0";
                                              break;
-                                        case 3: // bad guess, continue game
+                                        case 2: // bad guess, continue game
                                             response = "<!DOCTYPE html><html><head><title>MyHttpServer</title></head><body><h2>Hangman</h2>"
                                             + "<img src=\"" + "h" + game.getState() + ".gif" + "\">"
                                             + "<h2 style=\"font-family:'Lucida Console', monospace\"> " + game.getDisplayWord() + "</h2>"
@@ -104,12 +98,20 @@ public class MyHttpServer {
                                             + "Guess a character <input type=\"text\" name=\"guess\"><br>"
                                             + "<input type=\"submit\" value=\"Submit\">" + "</form></body></html>";
                                             break;
-                                        case 4: // bad guess, lost game
+                                        case 3: // bad guess, lost game
                                              response = "<!DOCTYPE html><html><head><title>MyHttpServer</title></head><body><h2>Hangman</h2>"
                                             + "<img src=\"" + "h7.gif" + "\">" + "<h2>You lost!  The word is " + game.getWord() + "</h2>"
                                             + "</body></html>";
                                              cookie="0";
                                              break;
+					case 4: // incorrect input, continue game
+					    response = "<!DOCTYPE html><html><head><title>MyHttpServer</title></head><body><h2>Hangman</h2>"
+                                            + "<img src=\"" + "h" + game.getState() + ".gif" + "\">"
+                                            + "<h2 style=\"font-family:'Lucida Console', monospace\"> " + game.getDisplayWord() + "</h2>"
+                                            + "<form action=\"/\" method=\"get\"> "
+                                            + "Incorrect input. Try another character <input type=\"text\" name=\"guess\"><br>"
+                                            + "<input type=\"submit\" value=\"Submit\">" + "</form></body></html>";
+                                            break;
                                     }
                                     
                                 }
