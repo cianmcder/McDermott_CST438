@@ -29,8 +29,9 @@ public class Game {
     private ArrayList<String> wordlist;  // list of words
     
     public Game() {
-        wordlist=null;
         state=1;
+        wordlist=null;
+	generator = new Random();
         word=randomWord();
         createDisplayWord();
     }
