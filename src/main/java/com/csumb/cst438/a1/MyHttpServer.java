@@ -44,7 +44,7 @@ public class MyHttpServer {
 			//Makes it so user doesn't worry about upper or lowercase
 			uri.toLowerCase();
 			//Checks if the user properly input a letter
-			if (uri.length == 0 || uri.length > 1 || letters.contains(uri) == false) {
+			if (uri.length() == 0 || uri.length() > 1 || letters.contains(uri) == false) {
 				flag = true;
 			}
 			
