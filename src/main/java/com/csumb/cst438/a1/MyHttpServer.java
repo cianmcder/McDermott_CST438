@@ -39,7 +39,7 @@ public class MyHttpServer {
                  */
 		public void handle(HttpExchange t) throws IOException {
 			String uri = t.getRequestURI().toString();
-			System.out.println(uri);
+			System.out.println("TEST MESSAGE: " + uri);
 			String u, letters = "abcdefghijklmnopqrstuvwxyz";
 			boolean flag = false;
 			//Makes it so user doesn't worry about upper or lowercase
