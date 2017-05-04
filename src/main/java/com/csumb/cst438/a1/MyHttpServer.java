@@ -39,12 +39,12 @@ public class MyHttpServer {
                  */
 		public void handle(HttpExchange t) throws IOException {
 			String uri = t.getRequestURI().toString();
-			String letters = "abcdefghijklmnopqrstuvwxyz";
+			String u, letters = "abcdefghijklmnopqrstuvwxyz";
 			boolean flag = false;
 			//Makes it so user doesn't worry about upper or lowercase
-			uri.toLowerCase();
+			u = uri.toLowerCase();
 			//Checks if the user properly input a letter
-			if (uri.length() == 0 || uri.length() > 1 || letters.contains(uri) == false) {
+			if (u.length() == 0 || u.length() > 1 || letters.contains(u) == false) {
 				flag = true;
 			}
 			
