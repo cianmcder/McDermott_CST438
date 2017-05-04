@@ -39,6 +39,7 @@ public class MyHttpServer {
                  */
 		public void handle(HttpExchange t) throws IOException {
 			String uri = t.getRequestURI().toString();
+			System.out.println(uri);
 			String u, letters = "abcdefghijklmnopqrstuvwxyz";
 			boolean flag = false;
 			//Makes it so user doesn't worry about upper or lowercase
@@ -70,7 +71,7 @@ public class MyHttpServer {
                                             + "<input type=\"submit\" value=\"Submit\">" + "</form></body></html>";
                                 } else {
                                     // continue with current game
-                                    char ch = uri.charAt(uri.length()-1);  // letter that user has guessed
+                                    char ch = u.charAt(u.length()-1);  // letter that user has guessed
                                     int result = game.playGame(ch, flag);
 				    flag = false;
                                     switch(result) {
