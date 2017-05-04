@@ -71,9 +71,7 @@ public class MyHttpServer {
                                 } else {
                                     // continue with current game
                                     char ch = uri.charAt(uri.length()-1);  // letter that user has guessed
-                                    int result = game.playGame(ch);
-				    if(flag == true)
-					result = 4;
+                                    int result = game.playGame(ch, flag);
                                     switch(result) {
                                         case 0: // good guess, continue game
                                             response = "<!DOCTYPE html><html><head><title>MyHttpServer</title></head><body><h2>Hangman</h2>"
