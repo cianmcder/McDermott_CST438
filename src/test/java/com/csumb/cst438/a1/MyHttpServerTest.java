@@ -22,7 +22,7 @@ import com.sun.net.httpserver.Headers;
 
 public class MyHttpServerTest {
     
-    public MyHttpServerTest() {
+    /*public MyHttpServerTest() {
     }
     
     @BeforeClass
@@ -44,7 +44,7 @@ public class MyHttpServerTest {
     /**
      * Test of main method, of class MyHttpServer.
      */
-    @Test
+    /*@Test
     public void testHandle() {
         String expectedBody = "<!DOCTYPE html><html><head><title>MyHttpServer</title></head>" + 
                 "<body><h2>Hangman</h2><img src=\"h1.gif\"><h2 style=\"font-family:'Lucida Console', monospace\">" +
