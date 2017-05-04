@@ -63,9 +63,9 @@ public class Game {
      *        2 = bad guess.  continue game
      *        3 = bad guess.  Lost game.
      */
-    public int playGame(char guess) {
+    public int playGame(char guess, boolean nonletter) {
             boolean correctGuess = updateDisplayWord(guess);
-            if (correctGuess==false) { 
+            if (correctGuess==false && nonletter == false) { 
                 state++;
                 if (state==7) {
                     // user has lost game
@@ -73,6 +73,8 @@ public class Game {
                 } else {
                     return 2; // bad guess, continue
                 }
+	    } else if (correctGuess==false && nonletter == true) {
+		return 4;
             } else if ( displayWord.indexOf("_") >= 0) {
                return 0; // continue game, with good guess
             } else {
