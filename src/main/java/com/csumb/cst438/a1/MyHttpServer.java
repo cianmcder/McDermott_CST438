@@ -39,14 +39,13 @@ public class MyHttpServer {
                  */
 		public void handle(HttpExchange t) throws IOException {
 			String uri = t.getRequestURI().toString();
-			System.out.println("TEST MESSAGE: " + uri);
 			String u, letters = "abcdefghijklmnopqrstuvwxyz";
 			boolean flag = false;
 			//Makes it so user doesn't worry about upper or lowercase, and sheds "/?guess=" from uri
 			u = uri.toLowerCase();
 			u = u.replace("?guess", "");
-			//Checks if the user properly input a letter
-			if (u.length() == 0 || u.length() > 1 || letters.contains(u) == false) {
+			//Checks if the user properly input a letter. Also takes into account when URI has a .gif to prevent error in this test
+			if ((u.length() == 0 || u.length() > 1 || letters.contains(u) == false) && uri.contains(".gif") == false) {
 				flag = true;
 			}
 			
