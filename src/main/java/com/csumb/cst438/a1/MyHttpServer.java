@@ -44,7 +44,7 @@ public class MyHttpServer {
 			boolean flag = false;
 			//Makes it so user doesn't worry about upper or lowercase, and sheds "/?guess=" from uri
 			u = uri.toLowerCase();
-			u = u.replace("/?guess", "");
+			u = u.replace("?guess", "");
 			//Checks if the user properly input a letter
 			if (u.length() == 0 || u.length() > 1 || letters.contains(u) == false) {
 				flag = true;
