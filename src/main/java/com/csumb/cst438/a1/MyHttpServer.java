@@ -50,6 +50,7 @@ public class MyHttpServer {
 			}
 			
 			System.out.println("URI=" + uri);
+			System.out.println("FLAG=" + flag);
 			if (uri.endsWith(".gif") || uri.endsWith(".ico")) {
 				// http get request for an image file
 				sendFile(t, uri.substring(1));
