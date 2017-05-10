@@ -29,7 +29,7 @@ public class Game {
     private ArrayList<String> wordlist;  // list of words
     
     public Game() {
-        state=1;
+	state=1;
         wordlist=null;
 	generator = new Random();
         word=randomWord();
@@ -50,7 +50,7 @@ public class Game {
     
     public void startNewGame() {
         state = 1;
-        word = "computer";
+	word=randomWord();
         createDisplayWord();
         
     }
