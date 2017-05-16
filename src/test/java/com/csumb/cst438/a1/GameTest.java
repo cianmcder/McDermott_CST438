@@ -95,7 +95,7 @@ public class GameTest {
         //Repeats "_ " for every character, then deletes the last " " outside the for-loop
         for(int i = 0; i < instance.getWord().length(); i++)
             expResult += "_ ";
-        expResult = expResult.substring(0, expResult.length()-1)
+        expResult = expResult.substring(0, expResult.length()-1);
         String result = instance.getDisplayWord();
         assertEquals(expResult, result);
         instance.playGame(getWord().charAt(0));
@@ -154,27 +154,27 @@ public class GameTest {
         int result = instance.playGame(guess);
         assertEquals(expResult, result);
         int i = 0;
-        while(letters.contains(instance.getWord(charAt(i)) == true && i < 26)
+        while(letters.contains(instance.getWord(charAt(i))) == true && i < 26)
             i++;
         result = instance.playGame(letters[i]);
         assertEquals(2, result);
-        while(letters.contains(instance.getWord(charAt(i)) == true && i < 26)
+        while(letters.contains(instance.getWord(charAt(i))) == true && i < 26)
             i++;
         result = instance.playGame(letters[i]);
         assertEquals(2, result);
-        while(letters.contains(instance.getWord(charAt(i)) == true && i < 26)
+        while(letters.contains(instance.getWord(charAt(i))) == true && i < 26)
             i++;
         result = instance.playGame(letters[i]);
         assertEquals(2, result);
-        while(letters.contains(instance.getWord(charAt(i)) == true && i < 26)
+        while(letters.contains(instance.getWord(charAt(i))) == true && i < 26)
             i++;
         result = instance.playGame(letters[i]);
         assertEquals(2, result);
-        while(letters.contains(instance.getWord(charAt(i)) == true && i < 26)
+        while(letters.contains(instance.getWord(charAt(i))) == true && i < 26)
             i++;
         result = instance.playGame(letters[i]);
         assertEquals(2, result);
-        while(letters.contains(instance.getWord(charAt(i)) == true && i < 26)
+        while(letters.contains(instance.getWord(charAt(i))) == true && i < 26)
             i++;
         result = instance.playGame(letters[i]);
         assertEquals(3, result);
