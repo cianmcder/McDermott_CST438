@@ -71,14 +71,14 @@ public class GameTest {
      */
     @org.junit.Test
     public void testGetDisplayWord() {
-        /*System.out.println("getDisplayWord");
+        System.out.println("getDisplayWord");
         Game instance = new Game();
         String expResult = "_ _ _ _ _ _ _ _";
         String result = instance.getDisplayWord();
         assertEquals(expResult, result);
         instance.playGame('r');
         result = instance.getDisplayWord();
-        assertEquals("_ _ _ _ _ _ _ r", result);*/
+        assertEquals("_ _ _ _ _ _ _ r", result);
 
     }
 
