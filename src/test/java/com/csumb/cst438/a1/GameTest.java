@@ -55,7 +55,7 @@ public class GameTest {
             expResult += 1;
         assertEquals(expResult, result);
         //tests for incorrect guess
-        char incorrect = '';
+        char incorrect = ' ';
         for(int i = 0; i < 26; i++)
         {
             if(word.contains(letters.charAt(i)) == false)
