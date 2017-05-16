@@ -44,7 +44,7 @@ public class GameTest {
         System.out.println("getState");
         Game instance = new Game();
         int expResult = 1;
-        String word = instance.getString();
+        String word = instance.getWord();
         String letters = "abcdefghijklmnopqrstuvwxyz";
         int result = instance.getState();
         assertEquals(expResult, result);
@@ -79,7 +79,7 @@ public class GameTest {
         System.out.println("getWord");
         Game instance = new Game();
         //Cannot find a way to test except running it twice and comparing
-        String expResult = instance.getWord;
+        String expResult = instance.getWord();
         String result = instance.getWord();
         assertEquals(expResult, result);
     }
