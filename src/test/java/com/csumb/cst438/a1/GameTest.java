@@ -49,16 +49,16 @@ public class GameTest {
         int result = instance.getState();
         assertEquals(expResult, result);
         //Tests for a correct guess
-        instance.playGame(word.charAt(0));
+        instance.playGame(word[0]);
         result = instance.getState();
-        if(word.contains(word.charAt(0)) == false)
+        if(word.contains(word[0]) == false)
             expResult += 1;
         assertEquals(expResult, result);
         //tests for incorrect guess
         char incorrect = ' ';
         for(int i = 0; i < 26; i++)
         {
-            if(word.contains(letters.charAt(i)) == false)
+            if(word.contains(letters[i]) == false)
             {
                 incorrect = letters.charAt(i);
                 break;
@@ -98,10 +98,10 @@ public class GameTest {
         expResult = expResult.substring(0, expResult.length()-1);
         String result = instance.getDisplayWord();
         assertEquals(expResult, result);
-        instance.playGame(getWord().charAt(0));
+        instance.playGame(getWord()[0]);
         result = instance.getDisplayWord();
         //Changes expResult based on the first letter in the word
-        char c = getWord.charAt(0);
+        char c = getWord()[0];
         expResult = expResult.substring(1, expResult.length());
         expResult = c + expResult;
         assertEquals(expResult, result);
