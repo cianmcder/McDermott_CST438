@@ -49,9 +49,9 @@ public class GameTest {
         int result = instance.getState();
         assertEquals(expResult, result);
         //Tests for a correct guess
-        instance.playGame(word[0]);
+        instance.playGame(word.charAt(0));
         result = instance.getState();
-        if(word.contains(word[0]) == false)
+        if(word.contains(word.charAt(0)) == false)
             expResult += 1;
         assertEquals(expResult, result);
         //tests for incorrect guess
