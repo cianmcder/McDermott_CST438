@@ -70,4 +70,41 @@ public class MyHttpServerTest {
     }
     }
     
+    /*
+     * Test for successfully downloading h1.gif
+     */
+    @Test
+    public void testH1() {
+        String path = "src/main/resources/h1.gif";
+        try {
+            TestHttpExchange t = new TestHttpExchange("/", header);
+            MyHttpServer.MyHandler handler = new MyHttpServer.MyHandler();
+            handler.handle(t);
+            //Checks the body for "<img src=\"h1.gif\">" to make sure the proper image is downloaded
+            String body = t.getResponseBody();
+            assertTrue(body.contains("<img src=\"h1.gif\">"));
+        }
+        catch {
+            fail("404 - File not found "+e.getMessage());
+        }
+    }
+    
+    /*
+     * Test that non-existing h9.gif is not downloaded, and error message is printed
+     */
+    @Test
+    public void testH9() {
+        String path = "src/main/resources/h9.gif";
+        try {
+            TestHttpExchange t = new TestHttpExchange("/", header);
+            MyHttpServer.MyHandler handler = new MyHttpServer.MyHandler();
+            handler.handle(t);
+            //Checks the body for "<img src=\"h9.gif\">" to check if it exists
+            String body = t.getResponseBody();
+            assertTrue(body.contains("<img src=\"h1.gif\">"));
+        }
+        catch {
+            fail("404 - File not found "+e.getMessage());
+        }
+    }
 }
