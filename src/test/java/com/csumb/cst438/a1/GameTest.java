@@ -145,7 +145,7 @@ public class GameTest {
         int expResult = 0;
         for(int i = 0; i < 26; i++)
         {
-            if(instance.getWord().contains(letters[i]) == true)
+            if(instance.getWord().contains(letters.charAt(i)) == true)
             {
                 guess = letters.charAt(0);
                 break;
