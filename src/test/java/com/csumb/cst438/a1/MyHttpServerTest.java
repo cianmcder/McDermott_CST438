@@ -12,6 +12,7 @@ import org.junit.BeforeClass;
 import org.junit.Test;
 import static org.junit.Assert.*;
 import com.sun.net.httpserver.Headers;
+import java.io.File;
 
 /**
  *
@@ -78,13 +79,10 @@ public class MyHttpServerTest {
         String path = "src/main/resources/h1.gif";
         File h1 = new File(path);
         try {
-            //Checks the body for "<img src=\"h1.gif\">" to make sure the image is embedded
-            String body = t.getResponseBody();
-            assertTrue(body.contains("<img src=\"h1.gif\">"));
             //Checks if h1.gif exists in the directory using File h1
             assertTrue(h1.exists() == true);
         }
-        catch {
+        catch (Exception e) {
             fail("404 - File not found "+e.getMessage());
         }
     }
@@ -97,13 +95,10 @@ public class MyHttpServerTest {
         String path = "src/main/resources/h9.gif";
         File h9 = new File(path);
         try {
-            //Checks the body for "<img src=\"h9.gif\">" to check if it is embedded
-            String body = t.getResponseBody();
-            assertTrue(body.contains("<img src=\"h9.gif\">"));
             //Checks if h9.gif exists using File h9
             assertTrue(h9.exists() == true);
         }
-        catch {
+        catch (Exception e) {
             fail("404 - File not found "+e.getMessage());
         }
     }
