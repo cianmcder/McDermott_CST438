@@ -52,7 +52,7 @@ public class GameTest {
         //Errors caused me to make a string ch and char c for the test
         String ch = word.substring(0, 1);
         char c = word.charAt(0);
-        instance.playGame(c, true);
+        instance.playGame(c, false);
         result = instance.getState();
         if(word.contains(ch) == false)
             expResult += 1;
@@ -103,7 +103,7 @@ public class GameTest {
         expResult = expResult.substring(0, expResult.length()-1);
         String result = instance.getDisplayWord();
         assertEquals(expResult, result);
-        instance.playGame(instance.getWord().charAt(0), true);
+        instance.playGame(instance.getWord().charAt(0), false);
         result = instance.getDisplayWord();
         //Changes expResult based on the first letter in the word
         char c = instance.getWord().charAt(0);
@@ -130,10 +130,10 @@ public class GameTest {
             i++;
         ch = letters.substring(i, i+1);
         c = letters.charAt(i);
-        instance.playGame(c, true);
+        instance.playGame(c, false);
         while(instance.getWord().contains(ch) == true && i < 26)
             i++;
-        instance.playGame(c, true);
+        instance.playGame(c, false);
         instance.startNewGame();
         int result = instance.getState();
         assertEquals(1,result);
@@ -162,38 +162,38 @@ public class GameTest {
                 break;
             }
         }
-        int result = instance.playGame(c, true);
+        int result = instance.playGame(c, false);
         assertEquals(expResult, result);
         int i = 0;
         while(instance.getWord().contains(letters.substring(i, i+1)) == true && i < 26)
             i++;
         c = letters.charAt(i);
-        result = instance.playGame(c, true);
+        result = instance.playGame(c, false);
         assertEquals(2, result);
         while(instance.getWord().contains(letters.substring(i, i+1)) == true && i < 26)
             i++;
         c = letters.charAt(i);
-        result = instance.playGame(c, true);
+        result = instance.playGame(c, false);
         assertEquals(2, result);
         while(instance.getWord().contains(letters.substring(i, i+1)) == true && i < 26)
             i++;
         c = letters.charAt(i);
-        result = instance.playGame(c, true);
+        result = instance.playGame(c, false);
         assertEquals(2, result);
         while(instance.getWord().contains(letters.substring(i, i+1)) == true && i < 26)
             i++;
         c = letters.charAt(i);
-        result = instance.playGame(c, true);
+        result = instance.playGame(c, false);
         assertEquals(2, result);
         while(instance.getWord().contains(letters.substring(i, i+1)) == true && i < 26)
             i++;
         c = letters.charAt(i);
-        result = instance.playGame(c, true);
+        result = instance.playGame(c, false);
         assertEquals(2, result);
         while(instance.getWord().contains(letters.substring(i, i+1)) == true && i < 26)
             i++;
         c = letters.charAt(i);
-        result = instance.playGame(c, true);
+        result = instance.playGame(c, false);
         assertEquals(3, result);
  
         instance.startNewGame();
@@ -205,7 +205,7 @@ public class GameTest {
             if(instance.getWord().contains(letters.substring(i, i+1)) == true && i < 26)
             {
                 c = letters.charAt(i);
-                result = instance.playGame(c, true);
+                result = instance.playGame(c, false);
                 assertEquals(0,result);
                 corrects++;
             }
@@ -216,7 +216,7 @@ public class GameTest {
         while(instance.getWord().contains(letters.substring(i, i+1)) == false && i < 26)
             i++;
         c = letters.charAt(i);
-        result = instance.playGame(c, true);
+        result = instance.playGame(c, false);
         assertEquals(1, result);
     }
     
